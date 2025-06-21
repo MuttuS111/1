@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript object</title>
+</head>
+<body>
+    <h1>JavaScript program: Object</h1>
+    <script>
+        const student = {
+            name: "Vaish",
+            age: 20,
+            marks: {
+                science: 85,
+                maths: 70
+            }
+        };
+
+        document.write("Student name: " + student.name + "<br>");
+        document.write("Student age: " + student.age + "<br>");
+        document.write("Science marks: " + student.marks.science + "<br>");
+        document.write("Maths marks: " + student.marks.maths + "<br>");
+
+        const nsmar﻿ks = parseInt(prompt("Enter a new science marks"));
+        student.marks.science = nsmar﻿ks;
+
+        const newage = prompt("Enter new age");
+        student.age = newage;
+
+        document.write("<br>Updated Details:<br>");
+        document.write("Student name: " + student.name + "<br>");
+        document.write("Student age: " + student.age + "<br>");
+        document.write("Science marks: " + student.marks.science + "<br>");
+        document.write("Maths marks: " + student.marks.maths + "<br>");
+    </script>
+</body>
+</html>
