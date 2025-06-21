@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+    <h2>JavaScript program: Email Validation</h2>
+    <script>
+        function validateEmail(email_id)
+        {
+            const regex_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
+            
+            if (regex_pattern.test(email_id))
+            {
+                document.write("<h3 style='color:blue;'>The email address is valid</h3>");
+            }
+            else
+            {
+                document.write("<h3 style='color:red;'>The email address is not valid</h3>");
+            }
+        }
+
+        let email_id = prompt("Enter email id:");
+        validateEmail(email_id);
+    </script>
+</body>
+</html>
