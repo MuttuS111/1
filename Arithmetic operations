@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Arithmetic Operation</title>
+</head>
+<body>
+    <h2>JavaScript program: Basic Arithmetic Operations</h2>
+    <script>
+        let n1 = parseInt(prompt("Enter the first number"));
+        let n2 = parseInt(prompt("Enter the second number"));
+        let result;
+
+        result = n1 + n2;
+        document.write("<b> Addition = </b>" + result + "<br>");
+
+        result = n1 - n2;
+        document.write("<b> Subtraction = </b>" + result + "<br>");
+
+        result = n1 * n2;
+        document.write("<b> Multiplication = </b>" + result + "<br>");
+
+        if (n2 != 0) {
+            result = n1 / n2;
+            document.write("<b> Division = </b>" + result + "<br>");
+        } else {
+            document.write("<b> Division = </b> not allowed (division by zero)<br>");
+        }
+    </script>
+</body>
+</html>
