@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Array</title>
+</head>
+<body>
+    <h2>JavaScript program: Creation and Insertion of data into array</h2>
+    <script>
+        var arr = [];
+        var num = parseInt(prompt("How many elements do you want in the array?"));
+        
+        for (var i = 1; i <= num; i++) {
+            var element = prompt("Enter element " + i);
+            arr.push(element);
+        }
+
+        document.write("<h3>Array Contents</h3>");
+        document.write("<p>" + arr + "</p>");
+    </script>
+</body>
+</html>
