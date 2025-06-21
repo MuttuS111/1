@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ID Card</title>
+</head>
+<body style="font-family:'Times New Roman', Times, serif;">
+    <div style="width:350px; padding:10px; border:1px solid blue; border-radius:5px; margin:auto; line-height:1.25;">
+        <div style="overflow:hidden;">
+            <img src="kud.jpg" alt="logo" style="float:right; width:100px; height:100px;">
+        </div>
+        <div style="text-align:center; clear:both;">
+            <h3 style="color:red; margin:5px 0;">Karnataka University</h3>
+            <h4 style="color:blue; margin:5px 0;">KCD College, Dharwad</h4>
+            <img src="profile.jpg" alt="student photo" style="width:80px; height:80px; border-radius:5px;">
+            <p style="color:green;"><B>Validity:</B> November 2021 to July 2024</p>
+        </div>
+
+        <table style="width:100%; margin-top:10px;">
+            <tr>
+                <td><b>Name</b></td>
+                <td>: Ganu</td>
+            </tr>
+            <tr>
+                <td><b>DUUCMCMS</b></td>
+                <td>: 002AB2230565</td>
+            </tr>
+            <tr>
+                <td><b>DOB</b></td>
+                <td>: 12-09-2004</td>
+            </tr>
+            <tr>
+                <td><b>Cell No</b></td>
+                <td>: 9879417891</td>
+            </tr>
+            <tr>
+                <td><b>Blood Group</b></td>
+                <td>: B<sup>+ve</sup></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

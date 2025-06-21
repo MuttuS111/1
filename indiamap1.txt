@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Overlay Text with Sample Background</title>
+    <style>
+        .container {
+            position: relative;
+            width: 500px;
+            margin: auto;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2;
+            color: darkblue;
+            background-color: lightgray;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="text-overlay">Hello India!!</h3>
+        <img src="india.jpg" alt="India-map">
+    </div>
+</body>
+</html
