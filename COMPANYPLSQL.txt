@@ -1,0 +1,10 @@
+   DECLARE
+   emp_count INt;
+   BEGIN
+   UPDATE EMPLOYEE10
+   SET salary=salary+5000
+   WHERE Dno=1;
+   emp_count:=SQL%ROWCOUNT;
+   DBMS_OUTPUT.PUT_LINE('number of employees updated :'||emp_count);
+   END;
+   /
