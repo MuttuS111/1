@@ -1,0 +1,21 @@
+ update CATALOG1 set price=price + (price*10)/100 where publisher_id in (select
+ publisher_idfromPUBLISHERwherename='Swati');
+
+ select title from CATALOG1 where book_id in (select book_id from ORDER_DETAILS
+ where quantity in (select max (quantity) from ORDER_DETAILS));
+
+
+ DECLARE
+ CURSOR book_cursor IS
+ SELECT title FROM CATALOG1;
+ book_title CATALOG1.title%TYPE;
+ BEGIN
+      OPEN book_cursor;
+      LOOP
+          FETCH book_cursor INTO book_title;
+          EXIT WHEN book_cursor%NOTFOUND;
+          DBMS_OUTPUT.PUT_LINE('Book Title: ' || book_title);
+      ENDLOOP;
+      CLOSEbook_cursor;
+ END;
+ /

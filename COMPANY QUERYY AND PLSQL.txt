@@ -1,0 +1,20 @@
+select PNo from PROJECT where PNo in(select PNo from WORKS_ON where aadharno in
+ (select aadharno from EMPLOYEE where name like '% Smith')) or DNo in (select DNo from
+ DEPARTMENT where mgr_aadharno in(select aadharno from EMPLOYEE where name like '%
+ Smith'));
+
+ select * from EMPLOYEE where DNo = 5 and salary between 30000 and 40000;
+
+
+
+ DECLARE
+ 	emp_count INT;
+ BEGIN
+ 	UPDATE EMPLOYEE
+ 	SET Salary = Salary + 5000
+ 	WHERE DNo=1;
+ 	emp_count := SQL%ROWCOUNT;
+ 	DBMS_OUTPUT.PUT_LINE('Number of employees updated: ' 	||emp_count);
+ END;
+ /
+ 

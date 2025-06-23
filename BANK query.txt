@@ -1,0 +1,3 @@
+select CUSTOMER.cname, LOAN.amount, ACCOUNT.accno from CUSTOMER, LOAN, ACCOUNT where ACCOUNT.accno=CUSTOMER.accno and ACCOUNT.bid = LOAN.bid and LOAN.bid=12345;
+
+select CUSTOMER.cname, ACCOUNT.accno, BRANCH.bid from CUSTOMER, ACCOUNT, BRANCH where CUSTOMER.accno=ACCOUNT.accno and ACCOUNT.bid=BRANCH.bid and BRANCH.bid=12345;

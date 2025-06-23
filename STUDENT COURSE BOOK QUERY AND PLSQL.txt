@@ -1,0 +1,28 @@
+ select b.book_isbn, p.book_title, p.publisher, p.author, d.cname, d.courseno from
+ BOOK_ADOPTION b, TEXT p, COURSE d where d.courseno=22 and d.courseno = b.courseno
+ and b.book_isbn = p.book_isbn;
+
+
+select s.name, s.major, c.cname, e.sem, e.marks from STUDENT s, COURSE c, ENROLL e
+ where e.regno = s.regno and e.courseno=c.courseno and c.courseno=22;
+
+
+ DECLARE
+ a INT;
+ b INT;
+ c INT;
+ ex EXCEPTION;
+ Begin
+ 	a := &First_Number;
+ 	b := &Second_Number;
+ 	IF b = 0THEN
+	raise ex;
+ 	ELSE
+ 	c := a/b;
+ 	DBMS_OUTPUT.PUT_LINE('c = ' || c);
+ 	ENDIF;
+ EXCEPTION
+ 	WHEN ex THEN
+ 		DBMS_OUTPUT.PUT_LINE('b value should not be zero');
+ END;
+ /

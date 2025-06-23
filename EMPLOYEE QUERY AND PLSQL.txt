@@ -1,0 +1,19 @@
+ select empno, name, doj from EMPLOYEE where doj in(select doj from EMPLOYEE group
+ by doj having count (*) > 1);
+
+ select e.did, AVG(s.basic), MAX(s.basic), MIN(s.basic) from EMPLOYEE e JOIN
+ SALARY sone.empno=s.empno group by e.did having count(*) >2;
+
+
+CREATE OR REPLACE PROCEDURE Insert Employee (
+ empno INT,
+ name VARCHAR,
+ did INT,
+ doj DATE,
+ city VARCHAR)
+ AS
+ BEGIN
+ INSERT INTO EMPLOYEE(Empno, Name, did, DOJ, City)
+ VALUES(Empno, Name, DID, DOJ, City);
+ END;
+ /

@@ -1,0 +1,39 @@
+ select CUSTOMER.customername, LOAN.amount, ACCOUNT.accno from CUSTOMER,
+ LOAN, ACCOUNT where ACCOUNT.accno = CUSTOMER.accno and ACCOUNT.branchid =
+ LOAN.branchid and LOAN.branchid=1111;
+
+
+ select CUSTOMER.customername, ACCOUNT.accno, BRANCH.branchid from
+ CUSTOMER, ACCOUNT, BRANCH where CUSTOMER.accno = ACCOUNT.accno and
+ ACCOUNT.branchid = BRANCH.branchid and BRANCH.branchid = 1111;
+
+
+
+ CREATE OR REPLACE PACKAGE AccountPackage AS
+ FUNCTION getBalance(AccNo INT) RETURN INT;
+ END AccountPackage;
+ /
+ Package created.
+
+ SQL>-- Implement the function in the package body
+ SQL> CREATE OR REPLACE PACKAGE BODY AccountPackage AS
+ FUNCTION getBalance(AccNo INT) RETURN INT IS
+ balance INT;
+ BEGIN
+ 	SELECT Balance INTO balance
+ 	FROMACCOUNT
+ 	WHEREAccNo=getBalance.AccNo;
+ 	RETURNbalance;
+ END;
+ END AccountPackage;
+ /
+ 
+Package body created.
+ SQL> DECLARE
+ 	accBalance INT;
+ 	BEGIN
+ 	accBalance := AccountPackage.getBalance(123456789);
+ 	DBMS_OUTPUT.PUT_LINE('Account Balance: ' || 	accBalance);
+ END;
+ /
+ Account Balance: 10000

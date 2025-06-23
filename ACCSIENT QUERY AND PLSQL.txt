@@ -1,0 +1,19 @@
+update PARTICIPATED set damage_amt=26000 where reg_no=20;
+ 1 row updated.
+
+ select p.name, p.address, d.damage_amt from PERSON p, PARTICIPATED d where
+ p.driver_id = d.driver_id;
+
+ DECLARE
+ 	amt PARTICIPATED.damage_amt%TYPE;
+ BEGIN
+ 	SELECT damage_amt INTO amt from PARTICIPATED
+ 	WHERE damage_amt = &Damage_Amount;
+ 	DBMS_OUTPUT.PUT_LINE('Damage Amount is : ' || amt);
+ EXCEPTION
+ WHEN NO_DATA_FOUND THEN
+ 	DBMS_OUTPUT.PUT_LINE('No matching data found');
+ WHEN OTHERS THEN
+ 	DBMS_OUTPUT.PUT_LINE('Error');
+ END;
+ /

@@ -1,0 +1,27 @@
+ select i.itemno, i.unitprice, o.quantity, i.unitprice*o.quantity from ITEM i, ORDERITEM o
+ where i.itemno = o.itemno and o.orderno = 12;
+
+ select c.cname, c.city, o.orderno, o.orderamt from CUSTOMER c, ORDER1 o
+ where c.cno = o.cno and o.orderno = 5;
+
+
+ CREATE OR REPLACE FUNCTION calculate_total_price(order_no INT)
+ RETURN INT IS
+ 	total_price INT;
+ BEGIN
+ 	SELECT SUM(ITEM.unitprice * ORDERITEM.Quantity)
+ 	INTO total_price
+ 	FROM ITEM
+ 	JOIN ORDERITEM ON ITEM.Itemno = ORDERITEM.Itemno
+ 	WHERE ORDERITEM.Orderno = order_no;
+ 	RETURN total_price;
+ END;
+ /
+ Function created.
+ DECLARE
+ 	total INT;
+ BEGIN
+ 	total := calculate_total_price(5);
+ 	DBMS_OUTPUT.PUT_LINE('Total Price : ' || total);
+ END;
+ /
